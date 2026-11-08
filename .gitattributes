@@ -1,0 +1,3 @@
+# Preserve exact bytes of files checked against geographic/editorial SHA-256 baselines.
+src/data/world/*.json -text
+viremont_ducados_codex.md -text
