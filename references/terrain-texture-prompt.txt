@@ -1,0 +1,5 @@
+Tool: built-in image_gen.imagegen
+Reference: references/duchy-terrain-reference.png (style reference only)
+Project asset: public/assets/terrain/painted-meadow.png
+
+Use case: stylized-concept. Asset type: seamless repeating ground albedo texture for a real Three.js 3D landscape. The supplied image is a STYLE REFERENCE ONLY, not an edit target. Generate ONE square perfectly top-down flat orthographic texture showing close small meadow grass, warm golden straw, sage and moss green soil with subtle olive and ochre painterly brush stippling. Match the lush medieval fantasy painted ground in the reference landscape panels. This asset will repeat across a heightmapped landscape; make edges tile seamlessly and avoid any large shapes or directional shadows. Fine natural tactile painterly detail, no photorealism. Absolutely NO rivers, lakes, roads, trees, buildings, mountains, horizon, sky, panels, borders, letters, labels or text. NO perspective and NO lighting gradient. Single uninterrupted texture filling entire image. 2048 square if available.

@@ -14,7 +14,9 @@
     "geography:validate-isthmus": "node scripts/validate-isthmus-repair.mjs",
     "viremont:generate": "node scripts/generate-viremont-duchies.mjs",
     "viremont:detail": "node scripts/generate-viremont-detail.mjs",
-    "viremont:validate": "node --experimental-strip-types scripts/validate-viremont-duchies.mjs"
+    "viremont:validate": "node --experimental-strip-types scripts/validate-viremont-duchies.mjs",
+    "terrain:generate": "node scripts/generate-terrain-fields.mjs",
+    "terrain:validate": "node --experimental-strip-types scripts/validate-terrain.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

@@ -19,7 +19,7 @@ Abra o endereço exibido pelo Vite. `npm run build` verifica o TypeScript e cria
 
 A imagem `mapa-mundi.png` orientou a composição. Os contornos são uma interpretação provisória, não uma vetorização exata. Os cinco nomes oceânicos aparecem apenas na imagem e não estão definidos nos Markdown; os rótulos no aplicativo são, portanto, provisórios. O raio da esfera é uma unidade visual configurável, sem equivalência em quilômetros.
 
-Os níveis 1 a 6 (continente detalhado até ruas e construções) ainda não são carregados. Novos dados deverão usar os IDs existentes, mantendo contornos globais estáveis.
+A exploração local atualmente cobre os seis ducados de Viremont, conforme a seção de terreno explorável. Os demais continentes continuam na representação mundial; condados, baronias, ruas e construções ainda não foram implementados. Novos dados deverão usar os IDs existentes, mantendo contornos globais estáveis.
 
 ## Revisão visual e territorial
 
@@ -96,3 +96,32 @@ npm run build
 ```
 
 A geração é uma operação explícita de manutenção; reiniciar o aplicativo apenas carrega os arquivos persistentes. A validação confere os seis IDs, conectividade, contenção nacional, cobertura, ausência de sobreposição, cidade proposta em Valeris e exclusão de países vizinhos na seleção. Também confere os ajustes territoriais solicitados e compara os hashes dos dados globais, pinturas originais e documento editorial com `references/viremont-duchies-baseline.json`.
+
+## Terreno explorável dos seis ducados
+
+Selecionar qualquer ducado abre uma vista local tridimensional, com relevo, água e vegetação, orientada pela referência artística `references/duchy-terrain-reference.png`. **Ver no globo** retorna à representação ilustrada. O globo, as fronteiras e a fonte editorial permanecem preservados; não foram criados condados, baronias, cidades, estradas ou novos nomes.
+
+Use **Panorama**, **Vista aérea** e **Explorar de perto** para alternar o enquadramento. A roda e os botões **+ / −** permitem continuar aproximando até perto do solo, com distância mínima de quatro unidades locais. Arraste para orbitar; botão direito para deslocar; no toque, um dedo gira e dois deslocam/aproximam. O minimapa conserva a relação com os seis polígonos e permite reenquadrar. **Fronteira** mostra o limite do ducado sobre o relevo. Os controles da antiga pintura no painel direito afetam a visão do globo; a vista local possui seus próprios controles.
+
+A cena usa um campo comum de 8192 unidades de largura para os seis ducados, em vez de seis paisagens sem relação espacial. `TerrainField.ts` converte as coordenadas normalizadas do atlas em coordenadas locais e permite o caminho inverso. Essa escala é de renderização, sem equivalência em metros ou quilômetros. Condados e baronias futuros deverão continuar usando as coordenadas normalizadas e referenciar a mesma superfície, sem ampliar ou redefinir o país para obter espaço.
+
+`scripts/generate-terrain-fields.mjs` gera um campo persistente de 257 × 257 amostras com altura de 16 bits, máscara florestal e máscara de água. As florestas e a água derivam das cores da pintura ativa. As altitudes são **interpretação artística provisória** de cristas posicionadas junto às montanhas pintadas; não são medições, nem uma reconstrução automática da luminosidade da imagem. A fonte não permite recuperar altitudes reais. Não há simulação hidrológica: a água utiliza um nível ilustrativo comum, ainda sem direções de fluxo ou cotas aprovadas. O arquivo `hydrology-draft.json` contém contornos estruturados de água extraídos da máscara, explicitamente pendentes de revisão; não é uma rede topológica de rios concluída.
+
+A representação local é plana e registrada no atlas, com câmera própria e abertura por transição de opacidade. Não há ainda uma transição geométrica contínua entre a esfera e o terreno. A região inclui contexto ao redor dos limites políticos; o relevo não termina na fronteira de um ducado.
+
+O módulo da cena e o campo binário são carregados sob demanda. A superfície é dividida em 144 parcelas com quatro densidades de malha (16, 32, 64 e 128 segmentos por lado), escolhidas conforme a proximidade da câmera. Normais usam a mesma função de altura e saias nas bordas escondem diferenças entre densidades. Vegetação usa instâncias; perto do solo, uma distribuição determinística mais fina é carregada em torno do alvo da câmera. O detalhe não altera as posições geográficas ao mudar a resolução. Ainda não há streaming de arquivos por parcela, quadtree com erro de tela, física de caminhada ou cadastro das subdivisões feudais.
+
+Depois da primeira abertura, a cena do terreno e o globo permanecem montados. Apenas a cena visível renderiza; a outra usa `frameloop="never"`. Os rótulos geográficos também conservam suas raízes DOM e alternam visibilidade, evitando desmontagem de portais durante a troca entre as cenas. Isso preserva os recursos carregados e permite alternar entre os ducados sem recriar o contexto WebGL a cada clique.
+
+A textura `public/assets/terrain/painted-meadow.png` foi criada com o gerador de imagens integrado, usando a referência do autor exclusivamente para estilo. Especificação usada: textura de solo quadrada, vista ortográfica superior, repetível, pinceladas de grama verde-musgo e palha dourada, sem sombras direcionais, rios, árvores, montanhas, construções, rótulos ou bordas. Ela fornece acabamento de superfície; não define geografia. O gerador de terreno e a renderização são determinísticos, independentes desse acabamento.
+
+O prompt completo do acabamento está em `references/terrain-texture-prompt.txt`. A imagem `references/terrain-masks-review.png` é uma visualização de diagnóstico das máscaras (água em azul, mata em verde, demais áreas em ocre). As superfícies de água da cena são trianguladas dos contornos estruturados, com suavização limitada à precisão da pintura.
+
+```sh
+npm run terrain:generate
+npm run terrain:validate
+npm run viremont:validate
+npm run build
+```
+
+A validação do terreno verifica integridade do binário, cobertura dos seis ducados, transformação reversível de coordenadas, áreas acessíveis, variação de relevo, continuidade das amostras compartilhadas entre densidades, normais finitas e preservação do local de cidade. A validação de Viremont continua protegendo os arquivos globais e a pintura original por hash.

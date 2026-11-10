@@ -17,18 +17,17 @@ export function DucalLayer({selected,hover,visible,onSelect}:{selected:Duchy|nul
     return Array.from({length:12},(_,j)=>mapToSphere([p[0]+(next[0]-p[0])*j/12,p[1]+(next[1]-p[1])*j/12],WORLD_RADIUS+.009));
   })),[]);
   useEffect(()=>()=>geometry.dispose(),[geometry]);useEffect(()=>()=>texture.dispose(),[texture]);
-  if(!visible)return null;
   return <>
-    <mesh geometry={geometry} raycast={()=>{}} renderOrder={3}><meshBasicMaterial side={DoubleSide} map={texture} transparent depthWrite={false}/></mesh>
-    {nationalLines.map((points,i)=><Line key={i} points={points} color="#8f4d39" lineWidth={2.5} raycast={()=>{}}/>)}
-    {duchies.filter(d=>!selected||d.id===selected.id).map(duchy=><DucalLabel key={duchy.id} duchy={duchy} onSelect={onSelect}/>)}
+    <mesh visible={visible} geometry={geometry} raycast={()=>{}} renderOrder={3}><meshBasicMaterial side={DoubleSide} map={texture} transparent depthWrite={false}/></mesh>
+    {nationalLines.map((points,i)=><Line visible={visible} key={i} points={points} color="#8f4d39" lineWidth={2.5} raycast={()=>{}}/>)}
+    {duchies.map(duchy=><DucalLabel key={duchy.id} show={visible&&(!selected||duchy.id===selected.id)} duchy={duchy} onSelect={onSelect}/>)}
   </>;
 }
-function DucalLabel({duchy,onSelect}:{duchy:Duchy;onSelect:(duchy:Duchy)=>void}){
+function DucalLabel({duchy,onSelect,show}:{duchy:Duchy;onSelect:(duchy:Duchy)=>void;show:boolean}){
   const {camera,size}=useThree();const [visible,setVisible]=useState(true);
   const position=useMemo(()=>mapToSphere(duchy.labelAnchor,WORLD_RADIUS+.03),[duchy]);
   useFrame(()=>{const projected=position.clone().project(camera);const facing=position.dot(camera.position.clone().sub(position))>0;const next=facing&&Math.abs(projected.x)<.98&&Math.abs(projected.y)<.96&&size.width>0;if(next!==visible)setVisible(next);});
-  return <Html position={position} center style={{display:visible?'block':'none'}}><button className="duchy-map-label" style={{borderColor:duchy.color}} onPointerDown={e=>e.stopPropagation()} onClick={()=>onSelect(duchy)}>{duchy.name.replace('Ducado de ','')}</button></Html>;
+  return <Html position={position} center style={{display:visible&&show?'block':'none'}}><button className="duchy-map-label" style={{borderColor:duchy.color}} onPointerDown={e=>e.stopPropagation()} onClick={()=>onSelect(duchy)}>{duchy.name.replace('Ducado de ','')}</button></Html>;
 }
 export function lookingAtViremont(cameraPosition:Vector3){
   return cameraPosition.length()<4.3&&cameraPosition.clone().normalize().dot(mapToSphere([.32,.39]).normalize())>.96;

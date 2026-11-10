@@ -18,7 +18,7 @@ import { DucalLayer, lookingAtViremont } from './DucalLayer';
 import { ViremontDetailLOD } from './ViremontDetailLOD';
 
 export type AtlasView='map'|'globe';
-interface Props { selected:Continent|null; onSelect:(continent:Continent|null)=>void; layers:Record<LayerKey,boolean>; focusSignal:number; view:AtlasView; illustrated:boolean; nation:Nation|null; onNationSelect:(nation:Nation)=>void; duchy:Duchy|null; onDuchySelect:(duchy:Duchy)=>void; }
+interface Props { selected:Continent|null; onSelect:(continent:Continent|null)=>void; layers:Record<LayerKey,boolean>; focusSignal:number; view:AtlasView; illustrated:boolean; nation:Nation|null; onNationSelect:(nation:Nation)=>void; duchy:Duchy|null; onDuchySelect:(duchy:Duchy)=>void; paused?:boolean; }
 const mapPosition=([x,y]:Point)=>new Vector3((x-.5)*6,(.5-y)*4,.02);
 
 function Navigation({selected,focusSignal,view,focus}:Pick<Props,'selected'|'focusSignal'|'view'>&{focus:GeographicFocus|null}){
@@ -78,11 +78,11 @@ function GeographicMaterial({layers}:Pick<Props,'layers'>){
   const [ready,setReady]=useState(false);useEffect(()=>{let active=true;loadTerrainSymbols().then(()=>{if(active)setReady(true);});return()=>{active=false;};},[]);
   const texture=useMemo(()=>makeMapTexture(layers),[layers,ready]);useEffect(()=>()=>texture.dispose(),[texture]);return <meshBasicMaterial map={texture}/>;
 }
-function Label({position,children,view}:{position:Point;children:React.ReactNode;view:AtlasView}){
+function Label({position,children,view,hidden=false}:{position:Point;children:React.ReactNode;view:AtlasView;hidden?:boolean}){
   const {camera}=useThree();const [visible,setVisible]=useState(true);
   const point=useMemo(()=>view==='map'?mapPosition(position):mapToSphere(position,WORLD_RADIUS+.04),[position,view]);
   useFrame(()=>{const next=view==='map'||point.dot(camera.position.clone().sub(point))>0;if(next!==visible)setVisible(next);});
-  return <Html position={point} center style={{pointerEvents:'none',display:visible?'block':'none'}}>{children}</Html>;
+  return <Html position={point} center style={{pointerEvents:'none',display:visible&&!hidden?'block':'none'}}>{children}</Html>;
 }
 function AtlasSurface({onSelect,layers,selected,view,illustrated,nation,onNationSelect,duchy,onDuchySelect}:Props){
   const [hovered,setHovered]=useState<Continent|null>(null);
@@ -102,12 +102,12 @@ function AtlasSurface({onSelect,layers,selected,view,illustrated,nation,onNation
     <DucalLayer selected={duchy} hover={hoveredDuchy} visible={showDuchies} onSelect={onDuchySelect}/>
     {(active||layers.borders)&&continents.filter(c=>layers.borders||c.id===active?.id).map(c=><Line key={c.id} points={[...c.outline,c.outline[0]].map(p=>view==='globe'?mapToSphere(p,WORLD_RADIUS+.008):mapPosition(p))} color="#f8d790" transparent opacity={active?.id === c.id ? 0.85 : 0.55} lineWidth={active?.id===c.id?1.5:.8}/>)}
     {view==='globe'&&<PoliticalLayer selected={selected} layers={layers} nation={nation} onSelect={onNationSelect}/>}
-    {layers.names&&nation?.id!=='aetheria-07'&&continents.filter(c=>!nation||c.id!==nation.continentId).map(c=><Label key={c.id} position={c.center} view={view}><span className={`map-label ${selected?.id===c.id?'active':''}`}>{c.name}</span></Label>)}
-    {layers.names&&nation?.id!=='aetheria-07'&&oceans.map(o=><Label key={o.name} position={o.position} view={view}><span className="ocean-label">{o.name}</span></Label>)}
+    {continents.map(c=><Label key={c.id} position={c.center} view={view} hidden={!layers.names||nation?.id==='aetheria-07'||c.id===nation?.continentId}><span className={`map-label ${selected?.id===c.id?'active':''}`}>{c.name}</span></Label>)}
+    {oceans.map(o=><Label key={o.name} position={o.position} view={view} hidden={!layers.names||nation?.id==='aetheria-07'}><span className="ocean-label">{o.name}</span></Label>)}
   </>;
 }
 export function WorldScene(props:Props){
   const focus=useMemo(()=>props.duchy?duchyFocus(props.duchy):props.nation?.id==='aetheria-07'?viremontFocus:null,[props.duchy,props.nation?.id]);
-  return <Canvas key={props.view} camera={{position:props.view==='globe'?[8,.5,0]:[0,0,7],fov:42,near:.01,far:100}} dpr={[1,2]} gl={{antialias:true,alpha:true}}><Suspense fallback={null}><AtlasSurface {...props}/></Suspense><Navigation selected={props.selected} focusSignal={props.focusSignal} view={props.view} focus={focus}/></Canvas>;
+  return <Canvas key={props.view} frameloop={props.paused?'never':'always'} camera={{position:props.view==='globe'?[8,.5,0]:[0,0,7],fov:42,near:.01,far:100}} dpr={[1,2]} gl={{antialias:true,alpha:true}}><Suspense fallback={null}><AtlasSurface {...props}/></Suspense><Navigation selected={props.selected} focusSignal={props.focusSignal} view={props.view} focus={focus}/></Canvas>;
 }
 
