@@ -77,11 +77,17 @@ Ele luta como guerreiro, mas sua maior vantagem é o ilusionismo. Pode aprender 
 **Proposta de coerência:** selos são artefatos rituais raros, aplicados com preparação e materiais específicos. Não conferem controle mental absoluto: impõem restrições ou punições definidas no contrato. Sua remoção exige um procedimento, chave ritual ou anulação legítima do vínculo. Falhas, custos e limites precisam ser estabelecidos antes de usar os selos na trama. O sistema é uma prática coercitiva dentro do mundo, não uma propriedade natural do clã.
 
 ## 10. Equilíbrio nas guerras
+**Direção definida pelo autor:** guerras com inspiração no peso dos combates e das campanhas de Kingdom, em um mundo que também possui magia. Combate com armas, tropas, comando e estratégia deve continuar central. Evitar escalada exagerada de poder individual; um personagem não pode destruir uma cidade com uma bola de fogo. A referência orienta o tom militar, sem importar automaticamente personagens, acontecimentos ou regras da obra.
+
 A escala de combate permanece coletiva. Infantaria, cavalaria, arqueiros, fortificações, suprimentos, clima e liderança seguem importantes. Um espadachim A vence muitos soldados isolados, mas pode cair diante de uma formação organizada. Um ilusionista S pode enganar um comandante, mas não um exército inteiro. Um mago poderoso precisa de tempo e proteção para técnicas grandes. Artefatos permitem que não especialistas usem efeitos limitados, mas custam recursos.
 
 **Regra orientadora:** nenhuma especialidade deve resolver sozinha todos os problemas. Guerra é combinação de logística, informação, disciplina, técnica e política.
 
 ## 11. Pontos para aprovação futura
+- Teto de força, velocidade, resistência e duração do reforço dos guerreiros, mantendo a direção militar aprovada.
+- Alcance, área, preparação, frequência e recuperação dos efeitos mágicos; limites para efeitos coletivos, artefatos e ilusão, sem contornar o teto aprovado.
+- Limites adicionais da cura sobrenatural e consequências para ferimentos e campanhas, preservando as capacidades e restrições já aprovadas na seção 12.
+- Disponibilidade de praticantes, acesso ao treinamento e lugar deles nas instituições civis e militares.
 - Nome definitivo da energia e nomenclatura das especialidades.
 - Aparência, herança e limites dos olhos do clã.
 - Como exatamente funcionam os selos de servidão e sua quebra.
@@ -90,3 +96,28 @@ A escala de combate permanece coletiva. Infantaria, cavalaria, arqueiros, fortif
 - Materiais dos artefatos e a precisão dos testes da Igreja.
 
 *Este documento desenvolve somente o sistema sobrenatural e os aspectos da origem do protagonista necessários para compreendê-lo; não define países, eventos ou enredo.*
+
+## 12. Conhecimento, instituições e novas descobertas
+**Definido pelo autor:** talento e energia não bastam para alcançar grande domínio. Conhecimento, estudo e prática são necessários; parte importante dos saberes avançados está concentrada em instituições e linhagens. O mundo possui diferentes centros de autoridade, sem uma única instituição mundial controlando todo o conhecimento.
+
+### Cura e sacerdotes
+A cura sobrenatural existe. A Igreja de Aurelion, no contexto inicial do protagonista, é responsável por uma tradição de sacerdotes curadores e concentra livros e ensinamentos necessários ao avanço nessa prática. O acesso ao acervo e ao ensino da Igreja é determinante para a formação avançada nessa tradição. Isso é concentração institucional de conhecimento, não prova de origem divina da magia nem afinidade exclusiva de uma religião. A organização da cura em outras sociedades permanece aberta.
+
+**Cura disponível no início — definido pelo autor:** os curadores podem estancar sangramentos, inclusive sangramentos fortes, e tratar ferimentos. A cura não restaura a estamina nem elimina automaticamente o cansaço e a fraqueza do paciente; interromper uma hemorragia não o deixa imediatamente recuperado ou pronto para combater. A extensão dos demais tratamentos e seus requisitos ainda serão definidos.
+
+**Definido pelo autor:** no início da história, os curadores ainda não sabem regenerar membros perdidos. Com o avanço do conhecimento mágico ao longo da história, aprenderão a regenerá-los. Trata-se de uma descoberta futura, não de uma técnica já disponível na abertura. Seus descobridores, momento de descoberta, requisitos, custos, duração e acesso ainda não foram definidos.
+
+Os demais limites da cura ainda serão definidos: gravidade dos ferimentos tratáveis, tempo de tratamento, custos, recuperação, doenças e sequelas. Ressurreição permanece uma questão em aberto; a aprovação de regenerar membros não implica aprovação de ressuscitar mortos. A existência de cura não elimina os limites militares já aprovados.
+
+### Torres mágicas e grandes clãs
+Torres mágicas e grandes clãs de magos concentram livros, técnicas e ensino. Aprender uma variedade maior de magias e aprofundar seu domínio depende do acesso a esses conhecimentos. Nomes, relações políticas, condições de ingresso e formas de controle dos acervos permanecem em aberto.
+
+### Mestres e estilos de esgrima
+Existem diferentes estilos de esgrima, transmitidos por mestres e também registrados em livros. Um autodidata pode aprender e vencer adversários, mas não adquire automaticamente a variedade de estilos e os conhecimentos preservados por essas tradições. Acesso ao ensino não substitui prática. Nomes de escolas, técnicas e mestres ainda não foram definidos.
+
+**Limite de combate aprovado:** os melhores guerreiros podem enfrentar vários soldados, mas continuam vulneráveis a cerco, flechas e cansaço. Não se tornam invulneráveis nem substituem um exército.
+
+### Campos mágicos e revolução do conhecimento
+Os campos citados pelo autor para desenvolver a magia são terra, água, fogo, ar, cura e escuridão/trevas. Esta lista registra os campos aprovados para desenvolvimento, sem estabelecer ainda se todos pertencem à mesma categoria técnica, como são suas afinidades ou quais combinações são possíveis. Escuridão e trevas designam, por enquanto, o mesmo campo; seus efeitos ainda não estão definidos.
+
+Durante a trajetória do protagonista ocorrerá uma revolução mágica: pessoas descobrirão novas maneiras de combinar elementos e desenvolver novos elementos ou manifestações a partir dessas combinações. Os resultados, descobridores, cronologia, participação do protagonista e difusão dessas descobertas ainda serão definidos. Novas descobertas continuam sujeitas aos limites de poder e ao peso dos exércitos já aprovados.

@@ -5,6 +5,9 @@
 ## Premissa
 Um engenheiro mundialmente reconhecido em 2026 reencarna no corpo de um nobre adolescente, por volta dos 12–13 anos, em um mundo medieval com magia. Seu nome ainda não foi escolhido; **Adrian foi descartado**. Engenharia mecânica e industrial é a especialidade sugerida. Outras figuras da história humana, como Tesla, Einstein, Newton e Aristóteles, também podem reencarnar em lugares diferentes. Não há competição formal: cada um segue seus objetivos, podendo formar alianças, ser recrutado ou tornar-se rival. Conhecimento não produz tecnologia sem recursos e infraestrutura.
 
+## Origem do protagonista
+**Definido pelo autor:** o Reino de Viremont, no continente de Aetheria, é a terra natal do protagonista em sua nova vida. O ducado, a cidade ou povoado de origem e a residência da família ainda não foram definidos.
+
 ## Planeta e povos
 O planeta possui **vários continentes**, culturas e religiões. Há diferentes povos e raças, mas a intenção é criar espécies originais, sem depender dos tradicionais elfos e similares. Pelo menos um outro planeta ou corpo planetário é claramente visível no céu. Ninguém conhecido conseguiu chegar lá; lendas falam de visitantes de outros mundos, sem comprovação pública. A origem dos povos e a existência real de alienígenas continuam abertas.
 

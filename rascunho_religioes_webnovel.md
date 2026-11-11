@@ -15,6 +15,8 @@ A Igreja de Aurelion ensina a existência de um Deus criador, fonte de toda a vi
 
 Sua organização é hierárquica: sacerdotes conduzem comunidades, autoridades regionais supervisionam templos e uma liderança espiritual central orienta a doutrina. No continente inicial, a Igreja exerce forte influência social e política e administra as esferas usadas nos testes de aptidão. Ela ensina que os dons mágicos são parte da criação divina, embora isso seja uma interpretação de fé, não um fato comprovado. Há sacerdotes dedicados ao serviço público e também disputas de interesse e poder dentro da instituição.
 
+**Definido pelo autor:** a Igreja de Aurelion também forma sacerdotes curadores e concentra livros e ensinamentos de cura. O acesso a esse conhecimento sustenta o avanço dos praticantes de sua tradição. Esse papel institucional não torna a cura um dom exclusivo dos fiéis nem comprova sua origem divina. As regras do sistema estão em `sistema_poderes_webnovel.md`, seção 12.
+
 **A definir depois:** títulos clericais, escrituras, ritos, calendário e grau de devoção do protagonista.
 
 ## 2. Fé de Elvarim
