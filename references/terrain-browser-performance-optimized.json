@@ -1,0 +1,514 @@
+[
+  {
+    "case": "optimized-idle",
+    "report": {
+      "durationMs": 8510.6,
+      "frames": 481,
+      "fps": 59.9,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 16.9,
+        "max": 25.3
+      },
+      "renderCpuMs": {
+        "median": 1.6,
+        "p95": 3.5,
+        "max": 15.2
+      },
+      "drawCalls": 145,
+      "triangles": 577151,
+      "geometries": 283,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": []
+    }
+  },
+  {
+    "case": "optimized-approach-cold",
+    "report": {
+      "durationMs": 8500.8,
+      "frames": 480,
+      "fps": 59.9,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 16.8,
+        "max": 17.9
+      },
+      "renderCpuMs": {
+        "median": 0.7,
+        "p95": 1,
+        "max": 4.3
+      },
+      "drawCalls": 37,
+      "triangles": 497263,
+      "geometries": 298,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": [
+        {
+          "label": "terrain.worker.64",
+          "ms": 214.8
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 146.5
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 153.7
+        },
+        {
+          "label": "local.worker",
+          "ms": 16.8,
+          "count": 248
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 542.7
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 452.9
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 478.1
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 423
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 531.6
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 438.8
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 168.8
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 174.6
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 88.8
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 80.6
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 131.7
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 133.2
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 120.7
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 157.7
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 113.3
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 135.5
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 133.3
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 115.5
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 64.8
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 56.9
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 53.2
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 61.4
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 53.6
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 129
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 150.6
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 96.9
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 64.7
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 117.5
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 104.7
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 79.2
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 103.9
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 73.1
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 72.7
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 167.2
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 128.8
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 70.2
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 128.3
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 127.9
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 80.4
+        }
+      ]
+    }
+  },
+  {
+    "case": "optimized-approach-warm",
+    "report": {
+      "durationMs": 8504.6,
+      "frames": 480,
+      "fps": 59.9,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 19.9,
+        "max": 29.6
+      },
+      "renderCpuMs": {
+        "median": 0.9,
+        "p95": 1.7,
+        "max": 3.8
+      },
+      "drawCalls": 37,
+      "triangles": 497263,
+      "geometries": 326,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": [
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 77.8
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 60.3
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 76.5
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "local.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 211.4
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 515.9
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "terrain.worker.128",
+          "ms": 364.2
+        },
+        {
+          "label": "terrain.worker.64",
+          "ms": 61
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        },
+        {
+          "label": "mesh.cache.hit",
+          "ms": 0
+        }
+      ]
+    }
+  }
+]

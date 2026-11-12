@@ -1,0 +1,644 @@
+[
+  {
+    "case": "warmup",
+    "report": {
+      "durationMs": 8500.3,
+      "frames": 479,
+      "fps": 59.8,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 21,
+        "max": 41.7
+      },
+      "renderCpuMs": {
+        "median": 3.3,
+        "p95": 4.6,
+        "max": 5.3
+      },
+      "drawCalls": 145,
+      "triangles": 459207,
+      "geometries": 145,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": []
+    }
+  },
+  {
+    "case": "baseline-idle",
+    "report": {
+      "durationMs": 8503.5,
+      "frames": 479,
+      "fps": 59.8,
+      "frameMs": {
+        "median": 16.6,
+        "p95": 26.3,
+        "max": 34.6
+      },
+      "renderCpuMs": {
+        "median": 2.5,
+        "p95": 4.3,
+        "max": 7
+      },
+      "drawCalls": 145,
+      "triangles": 459207,
+      "geometries": 145,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": []
+    }
+  },
+  {
+    "case": "water-frozen",
+    "report": {
+      "durationMs": 8502.1,
+      "frames": 479,
+      "fps": 59.8,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 24.6,
+        "max": 32.4
+      },
+      "renderCpuMs": {
+        "median": 2.7,
+        "p95": 4.6,
+        "max": 5.6
+      },
+      "drawCalls": 145,
+      "triangles": 459207,
+      "geometries": 145,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": false
+      },
+      "timings": []
+    }
+  },
+  {
+    "case": "without-trees",
+    "report": {
+      "durationMs": 8503.6,
+      "frames": 479,
+      "fps": 59.8,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 26.3,
+        "max": 32.3
+      },
+      "renderCpuMs": {
+        "median": 2.4,
+        "p95": 4.4,
+        "max": 5.4
+      },
+      "drawCalls": 144,
+      "triangles": 406257,
+      "geometries": 145,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": false,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": []
+    }
+  },
+  {
+    "case": "without-backdrop",
+    "report": {
+      "durationMs": 8503.5,
+      "frames": 480,
+      "fps": 59.9,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 18.1,
+        "max": 31.9
+      },
+      "renderCpuMs": {
+        "median": 3.7,
+        "p95": 4.8,
+        "max": 5.6
+      },
+      "drawCalls": 141,
+      "triangles": 437191,
+      "geometries": 145,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": false,
+        "animateWater": true
+      },
+      "timings": []
+    }
+  },
+  {
+    "case": "baseline-approach",
+    "report": {
+      "durationMs": 8811.7,
+      "frames": 20,
+      "fps": 2.4,
+      "frameMs": {
+        "median": 16.8,
+        "p95": 4799.7,
+        "max": 4799.7
+      },
+      "renderCpuMs": {
+        "median": 1.1,
+        "p95": 3.8,
+        "max": 3.8
+      },
+      "drawCalls": 36,
+      "triangles": 221367,
+      "geometries": 121,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": [
+        {
+          "label": "terrain.tile.64",
+          "ms": 184.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 124.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 121
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 84.4
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 133.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 129.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 114.8
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 146.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 105.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 158.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 121.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 83.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 116.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 138.7
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 135.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 120.4
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 62.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 58.7
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 75.2
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 53.2
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 64
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 54.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 53
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 58.4
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 56.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 56.1
+        },
+        {
+          "label": "vegetation.generate",
+          "ms": 607.9,
+          "count": 26723
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 74.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 173.2
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 132.2
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 63.5
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 132.2
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 154.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 95.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 65.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 119.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 178.8
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 579
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 444.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 103.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 121.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 168.9
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 468.4
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 444.8
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 87.7
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 78
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 485.1
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 437
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 103
+        },
+        {
+          "label": "terrain.tile.32",
+          "ms": 19.9
+        },
+        {
+          "label": "terrain.tile.32",
+          "ms": 15.1
+        },
+        {
+          "label": "terrain.tile.32",
+          "ms": 13.9
+        },
+        {
+          "label": "terrain.tile.32",
+          "ms": 14.3
+        },
+        {
+          "label": "terrain.tile.32",
+          "ms": 15.1
+        }
+      ]
+    }
+  },
+  {
+    "case": "baseline-approach-repeat",
+    "report": {
+      "durationMs": 9414.5,
+      "frames": 9,
+      "fps": 1,
+      "frameMs": {
+        "median": 16.7,
+        "p95": 5941.6,
+        "max": 5941.6
+      },
+      "renderCpuMs": {
+        "median": 2.9,
+        "p95": 3.3,
+        "max": 3.3
+      },
+      "drawCalls": 36,
+      "triangles": 309943,
+      "geometries": 118,
+      "textures": 12,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "visibility": "visible",
+      "options": {
+        "trees": true,
+        "water": true,
+        "backdrop": true,
+        "animateWater": true
+      },
+      "timings": [
+        {
+          "label": "vegetation.generate",
+          "ms": 582.5,
+          "count": 26475
+        },
+        {
+          "label": "vegetation.generate",
+          "ms": 568.6,
+          "count": 26723
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 135.5
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 156.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 97.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 65.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 121.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 181.7
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 151.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 121.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 106.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 174.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 176
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 480.6
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 459.7
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 90.8
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 79.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 85.1
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 151.7
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 501.2
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 440.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 141.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 106.5
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 106.5
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 159.8
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 470
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 294.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 114.8
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 74.4
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 139.5
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 137
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 118.6
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 62.8
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 57.5
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 53.7
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 62.2
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 54.7
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 78.8
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 173.5
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 187.9
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 103.8
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 578.1
+        },
+        {
+          "label": "terrain.tile.128",
+          "ms": 457.3
+        },
+        {
+          "label": "terrain.tile.64",
+          "ms": 123.1
+        }
+      ]
+    }
+  }
+]

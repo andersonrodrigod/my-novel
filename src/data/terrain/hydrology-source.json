@@ -1,0 +1,800 @@
+{
+  "status": "illustrative-proposal",
+  "coordinateSystem": "elarion-normalized-uv",
+  "physicalScale": null,
+  "basis": "Approved strategic-atlas art direction; authored connected courses, lowland lakes and a mountain spring. Elevations are illustrative local units, not surveyed geography.",
+  "courses": [
+    {
+      "id": "viremont-main-river",
+      "kind": "river",
+      "joins": null,
+      "points": [
+        [
+          0.348,
+          0.301,
+          126,
+          65
+        ],
+        [
+          0.344,
+          0.321,
+          113,
+          68
+        ],
+        [
+          0.334,
+          0.332,
+          105,
+          72
+        ],
+        [
+          0.32,
+          0.34,
+          99,
+          82
+        ],
+        [
+          0.31,
+          0.345,
+          95,
+          73
+        ],
+        [
+          0.302,
+          0.351,
+          91,
+          80
+        ],
+        [
+          0.299,
+          0.357,
+          87,
+          76
+        ],
+        [
+          0.305,
+          0.365,
+          83,
+          83
+        ],
+        [
+          0.3,
+          0.372,
+          79,
+          78
+        ],
+        [
+          0.292,
+          0.38,
+          75,
+          86
+        ],
+        [
+          0.293,
+          0.389,
+          71,
+          72
+        ],
+        [
+          0.3,
+          0.399,
+          67,
+          78
+        ],
+        [
+          0.308,
+          0.41,
+          61,
+          82
+        ],
+        [
+          0.306,
+          0.418,
+          57,
+          78
+        ],
+        [
+          0.296,
+          0.429,
+          51,
+          80
+        ],
+        [
+          0.289,
+          0.438,
+          47,
+          86
+        ],
+        [
+          0.278,
+          0.451,
+          41,
+          91
+        ],
+        [
+          0.267,
+          0.469,
+          34,
+          96
+        ],
+        [
+          0.256,
+          0.484,
+          28,
+          100
+        ],
+        [
+          0.243,
+          0.501,
+          22,
+          105
+        ]
+      ]
+    },
+    {
+      "id": "nortar-inlet",
+      "kind": "stream",
+      "joins": "nortar-lake",
+      "points": [
+        [
+          0.329,
+          0.308,
+          155,
+          7.4
+        ],
+        [
+          0.326,
+          0.311,
+          149,
+          8.7
+        ],
+        [
+          0.328,
+          0.314,
+          142,
+          9.9
+        ],
+        [
+          0.32257442723723273,
+          0.31671278638138367,
+          136,
+          9.9
+        ],
+        [
+          0.318,
+          0.319,
+          136,
+          12.4
+        ]
+      ]
+    },
+    {
+      "id": "nortar-outlet",
+      "kind": "stream",
+      "joins": "viremont-main-river",
+      "points": [
+        [
+          0.318,
+          0.319,
+          136,
+          12.4
+        ],
+        [
+          0.3142716282512828,
+          0.3221957472131862,
+          136,
+          13.6
+        ],
+        [
+          0.311,
+          0.325,
+          126,
+          13.6
+        ],
+        [
+          0.315,
+          0.33,
+          115,
+          13.6
+        ],
+        [
+          0.313,
+          0.335,
+          106,
+          14.9
+        ],
+        [
+          0.32,
+          0.34,
+          99,
+          16.1
+        ]
+      ]
+    },
+    {
+      "id": "selveria-inlet",
+      "kind": "stream",
+      "joins": "selveria-lake",
+      "points": [
+        [
+          0.283,
+          0.362,
+          137,
+          7.4
+        ],
+        [
+          0.278,
+          0.368,
+          130,
+          9.3
+        ],
+        [
+          0.282,
+          0.376,
+          119,
+          11.2
+        ],
+        [
+          0.276,
+          0.382,
+          111,
+          11.2
+        ],
+        [
+          0.2767692493470198,
+          0.38469237271456913,
+          105,
+          11.2
+        ],
+        [
+          0.278,
+          0.389,
+          105,
+          13
+        ]
+      ]
+    },
+    {
+      "id": "selveria-outlet",
+      "kind": "stream",
+      "joins": "viremont-main-river",
+      "points": [
+        [
+          0.278,
+          0.389,
+          105,
+          13
+        ],
+        [
+          0.28239300142709534,
+          0.3898786002854191,
+          105,
+          14.9
+        ],
+        [
+          0.283,
+          0.39,
+          96,
+          14.9
+        ],
+        [
+          0.287,
+          0.385,
+          87,
+          14.3
+        ],
+        [
+          0.292,
+          0.38,
+          75,
+          16.1
+        ]
+      ]
+    },
+    {
+      "id": "erdel-inlet",
+      "kind": "stream",
+      "joins": "erdel-lake",
+      "points": [
+        [
+          0.357,
+          0.348,
+          157,
+          7.4
+        ],
+        [
+          0.352,
+          0.354,
+          147,
+          9.3
+        ],
+        [
+          0.357,
+          0.361,
+          135,
+          11.2
+        ],
+        [
+          0.3546982443856619,
+          0.36675438903584523,
+          116,
+          11.2
+        ],
+        [
+          0.353,
+          0.371,
+          116,
+          13
+        ]
+      ]
+    },
+    {
+      "id": "erdel-outlet",
+      "kind": "stream",
+      "joins": "viremont-main-river",
+      "points": [
+        [
+          0.353,
+          0.371,
+          116,
+          13
+        ],
+        [
+          0.34814008953052594,
+          0.37282246642605277,
+          116,
+          14.3
+        ],
+        [
+          0.345,
+          0.374,
+          107,
+          14.3
+        ],
+        [
+          0.338,
+          0.369,
+          99,
+          14.9
+        ],
+        [
+          0.329,
+          0.374,
+          90,
+          15.5
+        ],
+        [
+          0.319,
+          0.369,
+          87,
+          15.5
+        ],
+        [
+          0.305,
+          0.365,
+          83,
+          17.4
+        ]
+      ]
+    },
+    {
+      "id": "valeris-inlet",
+      "kind": "stream",
+      "joins": "valeris-lake",
+      "points": [
+        [
+          0.328,
+          0.384,
+          112,
+          7.4
+        ],
+        [
+          0.323,
+          0.381,
+          104,
+          9.3
+        ],
+        [
+          0.3200053762017775,
+          0.38057219660025393,
+          94,
+          9.3
+        ],
+        [
+          0.316,
+          0.38,
+          94,
+          11.8
+        ]
+      ]
+    },
+    {
+      "id": "valeris-outlet",
+      "kind": "stream",
+      "joins": "viremont-main-river",
+      "points": [
+        [
+          0.316,
+          0.38,
+          94,
+          11.8
+        ],
+        [
+          0.3123644802325276,
+          0.38155807990034535,
+          94,
+          12.4
+        ],
+        [
+          0.309,
+          0.383,
+          88,
+          12.4
+        ],
+        [
+          0.304,
+          0.378,
+          83,
+          13
+        ],
+        [
+          0.299,
+          0.38,
+          79,
+          14.3
+        ],
+        [
+          0.292,
+          0.38,
+          75,
+          16.1
+        ]
+      ]
+    },
+    {
+      "id": "montelur-inlet",
+      "kind": "stream",
+      "joins": "montelur-lake",
+      "points": [
+        [
+          0.319,
+          0.448,
+          127,
+          7.4
+        ],
+        [
+          0.314,
+          0.442,
+          105,
+          9.3
+        ],
+        [
+          0.317,
+          0.438,
+          90,
+          11.2
+        ],
+        [
+          0.3078348419968669,
+          0.43376992707547707,
+          73,
+          11.2
+        ],
+        [
+          0.304,
+          0.432,
+          73,
+          13
+        ]
+      ]
+    },
+    {
+      "id": "montelur-outlet",
+      "kind": "stream",
+      "joins": "viremont-main-river",
+      "points": [
+        [
+          0.304,
+          0.432,
+          73,
+          13
+        ],
+        [
+          0.301626516970909,
+          0.4351646440387881,
+          73,
+          14.3
+        ],
+        [
+          0.301,
+          0.436,
+          66,
+          14.3
+        ],
+        [
+          0.293,
+          0.434,
+          56,
+          14.9
+        ],
+        [
+          0.296,
+          0.429,
+          51,
+          16.7
+        ]
+      ]
+    },
+    {
+      "id": "thargrund-inlet",
+      "kind": "stream",
+      "joins": "thargrund-lake",
+      "points": [
+        [
+          0.365,
+          0.4,
+          172,
+          7.4
+        ],
+        [
+          0.359,
+          0.403,
+          154,
+          9.3
+        ],
+        [
+          0.35237947296764704,
+          0.40420373218770056,
+          134,
+          9.3
+        ],
+        [
+          0.348,
+          0.405,
+          134,
+          12.4
+        ]
+      ]
+    },
+    {
+      "id": "thargrund-outlet",
+      "kind": "stream",
+      "joins": "viremont-main-river",
+      "points": [
+        [
+          0.348,
+          0.405,
+          134,
+          12.4
+        ],
+        [
+          0.3437045844550664,
+          0.4060738538862334,
+          134,
+          14.3
+        ],
+        [
+          0.34,
+          0.407,
+          114,
+          14.3
+        ],
+        [
+          0.332,
+          0.402,
+          96,
+          14.3
+        ],
+        [
+          0.323,
+          0.407,
+          80,
+          14.9
+        ],
+        [
+          0.316,
+          0.405,
+          70,
+          16.1
+        ],
+        [
+          0.308,
+          0.41,
+          61,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "thargrund-mountain-spring",
+      "kind": "spring",
+      "joins": "thargrund-outlet",
+      "points": [
+        [
+          0.346,
+          0.427,
+          570,
+          5.6
+        ],
+        [
+          0.342,
+          0.423,
+          410,
+          7.2
+        ],
+        [
+          0.338,
+          0.42,
+          285,
+          8.8
+        ],
+        [
+          0.335,
+          0.413,
+          165,
+          10.4
+        ],
+        [
+          0.34,
+          0.407,
+          114,
+          13.6
+        ]
+      ]
+    }
+  ],
+  "lakes": [
+    {
+      "id": "nortar-lake",
+      "duchyId": "viremont-nortar",
+      "center": [
+        0.318,
+        0.319
+      ],
+      "radii": [
+        0.0038,
+        0.0032
+      ],
+      "level": 136,
+      "inlet": "nortar-inlet",
+      "outlet": "nortar-outlet"
+    },
+    {
+      "id": "selveria-lake",
+      "duchyId": "viremont-selveria",
+      "center": [
+        0.278,
+        0.389
+      ],
+      "radii": [
+        0.0032,
+        0.0032
+      ],
+      "level": 105,
+      "inlet": "selveria-inlet",
+      "outlet": "selveria-outlet"
+    },
+    {
+      "id": "erdel-lake",
+      "duchyId": "viremont-erdel",
+      "center": [
+        0.353,
+        0.371
+      ],
+      "radii": [
+        0.0038,
+        0.0032
+      ],
+      "level": 116,
+      "inlet": "erdel-inlet",
+      "outlet": "erdel-outlet"
+    },
+    {
+      "id": "valeris-lake",
+      "duchyId": "viremont-valeris",
+      "center": [
+        0.316,
+        0.38
+      ],
+      "radii": [
+        0.0029,
+        0.0025
+      ],
+      "level": 94,
+      "inlet": "valeris-inlet",
+      "outlet": "valeris-outlet"
+    },
+    {
+      "id": "montelur-lake",
+      "duchyId": "viremont-montelur",
+      "center": [
+        0.304,
+        0.432
+      ],
+      "radii": [
+        0.0031,
+        0.0027
+      ],
+      "level": 73,
+      "inlet": "montelur-inlet",
+      "outlet": "montelur-outlet"
+    },
+    {
+      "id": "thargrund-lake",
+      "duchyId": "viremont-thargrund",
+      "center": [
+        0.348,
+        0.405
+      ],
+      "radii": [
+        0.0032,
+        0.0027
+      ],
+      "level": 134,
+      "inlet": "thargrund-inlet",
+      "outlet": "thargrund-outlet"
+    }
+  ],
+  "plains": [
+    {
+      "id": "nortar-open-ground",
+      "duchyId": "viremont-nortar",
+      "center": [
+        0.318,
+        0.328
+      ],
+      "radius": 340,
+      "level": 147
+    },
+    {
+      "id": "selveria-open-ground",
+      "duchyId": "viremont-selveria",
+      "center": [
+        0.277,
+        0.398
+      ],
+      "radius": 270,
+      "level": 118
+    },
+    {
+      "id": "erdel-open-ground",
+      "duchyId": "viremont-erdel",
+      "center": [
+        0.355,
+        0.383
+      ],
+      "radius": 340,
+      "level": 130
+    },
+    {
+      "id": "valeris-open-ground",
+      "duchyId": "viremont-valeris",
+      "center": [
+        0.317,
+        0.391
+      ],
+      "radius": 370,
+      "level": 108
+    },
+    {
+      "id": "montelur-open-ground",
+      "duchyId": "viremont-montelur",
+      "center": [
+        0.31,
+        0.438
+      ],
+      "radius": 280,
+      "level": 88
+    },
+    {
+      "id": "thargrund-open-ground",
+      "duchyId": "viremont-thargrund",
+      "center": [
+        0.353,
+        0.413
+      ],
+      "radius": 290,
+      "level": 163
+    }
+  ]
+}

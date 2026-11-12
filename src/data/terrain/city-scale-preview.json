@@ -1,0 +1,11 @@
+{
+  "status": "illustrative-proposal",
+  "duchyId": "viremont-valeris",
+  "center": [0.317, 0.391],
+  "basis": "Temporary walled-city icon on the existing Valeris planning plain; not a named settlement or approved capital.",
+  "defaultAreaShare": 0.0005,
+  "areaShares": [0.0005, 0.0015, 0.003],
+  "aspect": 1.3,
+  "comparisonMarquesadoShare": 0.1,
+  "physicalScale": null
+}

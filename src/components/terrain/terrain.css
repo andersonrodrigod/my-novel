@@ -16,3 +16,45 @@
 @keyframes landscape-reveal{from{opacity:0}to{opacity:1}}
 @media(max-width:1100px){.terrain-title{left:20px;right:150px}.terrain-crest{width:40px;height:51px;font-size:27px}.terrain-title p{font-size:12px}.terrain-top-actions{right:19px}.terrain-top-actions button{font-size:10px;padding:9px}.terrain-minimap{width:112px;left:19px;bottom:102px}.terrain-minimap svg{height:93px}.terrain-view-controls{bottom:60px}.terrain-footnote{left:18px;right:18px;bottom:17px}.terrain-zoom{bottom:103px;right:20px}.terrain-view-controls button{padding:9px;font-size:10px}}
 @media(max-width:560px){.terrain-title{top:18px;right:18px;left:17px;gap:10px}.terrain-title h2{font-size:21px}.terrain-title p{font-size:11px;max-width:270px}.terrain-eyebrow{font-size:7px;letter-spacing:1px}.terrain-top-actions{top:113px;right:18px}.terrain-top-actions button{padding:7px}.terrain-minimap{width:88px;bottom:103px;left:17px;padding:7px}.terrain-minimap svg{height:70px}.terrain-minimap small{display:none}.terrain-view-controls{gap:3px;bottom:68px}.terrain-view-controls button{font-size:9px;padding:9px 8px}.terrain-footnote{font-size:9px}.terrain-footnote small{font-size:8px}.terrain-zoom button{height:33px;width:34px}.terrain-title::before{height:180px}}
+/* The local atlas is a full landscape; its editorial guide opens on demand. */
+.app-shell.terrain-wide{display:grid;grid-template-columns:minmax(0,1fr);height:100dvh;min-height:0;overflow:hidden}
+.terrain-wide>.sidebar,.terrain-wide>.right-panel,.terrain-wide>.main-area>.topbar{display:none}
+.terrain-wide>.main-area{height:100%;min-height:0}
+.terrain-wide.terrain-guide-open>.right-panel{display:flex;position:fixed;right:0;top:0;bottom:0;width:min(340px,92vw);z-index:12;box-shadow:-12px 0 40px #10241d66}
+.terrain-guide-close{flex:none;border:0;border-bottom:1px solid #b9a877;background:#173e36;color:#f6e6ba;padding:15px 20px;text-align:right;cursor:pointer;font:12px Cinzel}
+.terrain-duchy-picker{position:absolute;top:29px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:9px 12px;background:#153b32e8;border:1px solid #d4b77880;z-index:3;color:#ddca94}
+.terrain-duchy-picker>span{font-size:8px;letter-spacing:1.8px}
+.terrain-duchy-picker select{background:#173b31;color:#f4e6bc;border:0;font:13px Cinzel;padding:2px 16px 2px 5px;cursor:pointer;max-width:150px}
+.terrain-wide .terrain-top-actions{flex-direction:row;gap:6px;right:25px;top:27px}
+.terrain-wide .terrain-title{right:65%;max-width:540px}
+.terrain-wide .terrain-title h2{font-size:clamp(23px,2.5vw,38px)}
+.terrain-wide .terrain-title p{max-width:510px}
+.terrain-wide .terrain-title::before{right:-100vw;height:190px}
+.terrain-wide .terrain-view-controls{bottom:61px}
+.terrain-wide .terrain-footnote{bottom:18px}
+.terrain-wide .terrain-footnote>span{color:#ffe4ad}
+@media(max-width:1150px){.terrain-wide .terrain-title{right:210px;max-width:65%}.terrain-wide .terrain-top-actions{flex-direction:column}.terrain-duchy-picker{left:auto;right:25px;top:156px;transform:none}.terrain-duchy-picker>span{display:none}}
+@media(max-width:560px){.terrain-wide{position:fixed;inset:0;z-index:6}.terrain-wide .terrain-title{right:18px;max-width:calc(100% - 35px)}.terrain-wide .terrain-title h2{font-size:23px}.terrain-wide .terrain-title p{font-size:11px;max-width:290px}.terrain-wide .terrain-top-actions{top:122px;right:17px}.terrain-duchy-picker{top:122px;left:17px;right:auto}.terrain-wide .terrain-view-controls{bottom:71px}.terrain-wide .terrain-footnote{bottom:15px}}
+.terrain-city-marker{width:126px;padding:0!important;border:0!important;background:transparent!important;color:#fff0c6;font:11px Georgia;text-align:center;transform:translateY(-50%);filter:drop-shadow(0 2px 3px #102c29aa);cursor:pointer}
+.terrain-city-marker svg{display:block;width:104px;height:81px;margin:auto}.terrain-city-marker>span{display:block;background:#173d32ec;border:1px solid #dfbd72a6;border-radius:3px;padding:4px 5px}.terrain-city-marker small{display:block;font-size:9px;background:#173d32dd;padding:3px 2px;color:#e1cb97}.terrain-city-marker::after{content:'';display:block;height:19px;width:1px;background:#ffe5a0;margin:auto}.terrain-city-marker:hover>span,.terrain-city-marker:focus-visible>span{background:#3b6042}
+.terrain-city-scale{position:absolute;right:80px;bottom:121px;width:274px;padding:17px 18px;background:#163b32f2;border:1px solid #d8b872a6;box-shadow:0 8px 30px #102c2944;color:#f5e7be;z-index:4;border-radius:3px;font:12px/1.5 Georgia}
+.terrain-city-scale h3{font:20px Cinzel;margin:5px 0 7px}.terrain-city-scale p{margin:7px 0}.city-scale-eyebrow{font:8px/1.5 sans-serif;letter-spacing:1.5px;color:#e7c780}.city-scale-close{position:absolute;right:8px;top:7px;background:none;border:0;color:#d8c38f;font-size:20px;cursor:pointer}.city-scale-options{display:flex;gap:6px;margin:13px 0}.city-scale-options button,.city-scale-focus{border:1px solid #b79d61;background:#214a3e;color:#f9e7ba;padding:8px 11px;font:12px Georgia;cursor:pointer}.city-scale-options button[aria-pressed=true]{background:#dec180;color:#243f31}.city-scale-ratio{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #c3af7140}.city-scale-ratio strong{font:28px Georgia;color:#ffe3a0}.city-scale-ratio span{font-size:11px;color:#dddbbd}.city-scale-key{font-size:11px;color:#e5dfbb}.city-scale-key i{display:inline-block;width:11px;height:8px;border:1px solid #ffe397;background:#dfb65e55;margin-right:4px}.city-scale-focus{width:100%;margin:6px 0 11px}.terrain-city-scale details{font-size:11px;color:#d2d8b5}.terrain-city-scale summary{cursor:pointer;color:#e1cb95}.terrain-city-scale details p{margin:8px 0}
+@media(max-width:900px){.terrain-city-scale{right:69px;width:250px;bottom:112px;padding:13px}.terrain-city-scale h3{font-size:18px}}
+@media(max-width:560px){
+ .terrain-city-scale{left:17px;right:59px;bottom:124px;width:auto;max-height:30vh;overflow:auto;padding:12px 14px;font-size:11px;line-height:1.35}
+ .terrain-city-scale h3{font-size:16px;margin:3px 0 5px}
+ .terrain-city-scale .city-scale-eyebrow{font-size:7px;margin:0}
+ .terrain-city-scale>p:not(.city-scale-eyebrow):not(.city-scale-key){display:none}
+ .terrain-city-scale .city-scale-options{margin:7px 0}
+ .terrain-city-scale .city-scale-options button{padding:6px 10px}
+ .terrain-city-scale .city-scale-ratio{padding:4px 0}
+ .terrain-city-scale .city-scale-ratio strong{font-size:22px}
+ .terrain-city-scale .city-scale-ratio span{font-size:10px}
+ .terrain-city-scale .city-scale-key{font-size:10px;line-height:1.35;margin:7px 0}
+ .terrain-city-scale .city-scale-focus{display:none}
+ .terrain-city-scale details{font-size:10px}
+ .terrain-city-marker{width:112px}
+ .terrain-city-marker svg{width:87px;height:69px}
+ .terrain-wide .terrain-view-controls{max-width:calc(100vw - 25px);gap:3px}
+ .terrain-wide .terrain-view-controls button{font-size:9px;padding:8px 6px}
+}

@@ -16,7 +16,9 @@
     "viremont:detail": "node scripts/generate-viremont-detail.mjs",
     "viremont:validate": "node --experimental-strip-types scripts/validate-viremont-duchies.mjs",
     "terrain:generate": "node scripts/generate-terrain-fields.mjs",
-    "terrain:validate": "node --experimental-strip-types scripts/validate-terrain.mjs"
+    "terrain:validate": "node --experimental-strip-types scripts/validate-terrain.mjs",
+    "terrain:validate-resources": "node --experimental-strip-types scripts/validate-terrain-resources.mjs",
+    "terrain:validate-city": "node --experimental-strip-types scripts/validate-city-scale.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

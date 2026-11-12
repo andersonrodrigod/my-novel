@@ -12,9 +12,11 @@
 - Existe um **ponto de cidade proposto** no centro-norte; não foi definido se é capital.
 - Modelo de planejamento: **1 reino → 6 ducados → 24 condados → 96 baronias**, como totais iniciais, e não uma obrigação de áreas iguais. A coroa pode possuir propriedades e direitos próprios dentro desses territórios, sem criar um sétimo ducado.
 
-## 2. Seis ducados — nomes e histórias provisórias
+## 2. Seis ducados — nomes definidos e histórias provisórias
 
-Os nomes e os fatos históricos abaixo são **ficção proposta para o universo**, sujeitos à aprovação do autor. Não foram extraídos dos arquivos de geografia.
+**Nomes definidos pelo autor:** Nortar, Valeris, Selvéria, Érdel, Montelur e Thargrund serão mantidos. Essa decisão aprova os nomes dos seis ducados; as histórias e demais detalhes propostos abaixo continuam sujeitos à revisão.
+
+Os fatos históricos abaixo são **ficção proposta para o universo**, sujeitos à aprovação do autor. Não foram extraídos dos arquivos de geografia.
 
 ### 2.1 Ducado de Nortar — norte
 
@@ -77,6 +79,39 @@ Os nomes e os fatos históricos abaixo são **ficção proposta para o universo*
 
 As divisões administrativas **não são localidades**: cada ducado poderá conter muitas cidades, vilas, aldeias e propriedades. As fronteiras ducais devem ser contínuas, sem sobreposições nem lacunas dentro de Viremont. Não atribuir uma capital real definitiva nesta etapa. Caso o mapa mostre um domínio da Coroa, representar inicialmente como **camada de propriedade/jurisdição**, não como território adicional que diminua automaticamente os seis ducados.
 
+### 3.1 Marquesados militares da Coroa
+
+**Definido pelo autor:** Viremont terá marquesados concebidos como **pequenos territórios militares sob autoridade direta do rei**, com pessoal financiado pela Coroa. Essa é a função própria dos marquesados neste universo.
+
+**Distribuição definida pelo autor:** serão **seis marquesados, um em cada ducado** — Nortar, Valeris, Selvéria, Érdel, Montelur e Thargrund —, cada um com um marquês. A autoridade direta do rei e o financiamento pela Coroa permanecem como base dessa organização.
+
+**Área definida pelo autor:** o marquesado ocupará **10% da área do respectivo ducado**. Os 90% restantes ficam disponíveis para o planejamento dos demais territórios internos, respeitando a hierarquia entre condados e baronias. A distribuição detalhada dessas terras ainda será definida.
+
+**Etapa atual definida pelo autor:** registrar a organização dos marquesados neste documento. A escolha da localização e do formato dessas áreas territoriais e sua implementação no mapa ficam para depois.
+
+**Ainda em aberto:** nomes dos marquesados e dos marqueses, localização e formato da área de 10%, relação administrativa com ducados, condados e baronias e forma de escolha dos marqueses. Esta definição ainda não estabelece polígonos no mapa.
+
+### 3.2 Divisões internas e níveis de visualização
+
+**Definido pelo autor:** os seis ducados existentes continuam como base da organização territorial. O redesenho futuro tratará de suas divisões internas.
+
+- **Mapa geral de Viremont:** mostrar a divisão entre os seis ducados. As fronteiras internas de marquesados, condados e baronias ficam ocultas nessa visão.
+- **Ao entrar em um ducado:** apresentar o mapa interno do ducado e distinguir os terrenos do marquesado, dos condados, das baronias e das demais divisões que forem definidas, respeitando a hierarquia territorial.
+- **Planejamento das áreas:** reservar 10% de cada ducado ao seu marquesado e definir os demais territórios na etapa de detalhamento interno.
+
+**Etapa atual:** somente registro da diretriz. O desenho dos polígonos e a implementação dessas divisões e de sua visualização ocorrerão posteriormente.
+
+### 3.3 Cidades, cards e travessias — objetivos posteriores
+
+**Registro do autor em 11/11/2026:** os pontos abaixo ficam planejados para etapas posteriores. O estudo visual da cidade murada foi aprovado como referência de apresentação; as próximas funcionalidades e alterações geográficas ainda serão desenvolvidas.
+
+- [ ] **Cidade de estudo em Valeris:** usar **0,30% da área do ducado** como proporção preferida pelo autor para o próximo detalhamento. A escala física, o nome e a localização oficial continuam pendentes.
+- [ ] **Capitais:** acrescentar opções de **0,40% e 0,50%** ao estudo de proporções para comparar capitais. A escolha da capital e de sua proporção definitiva será feita posteriormente.
+- [ ] **Formato aprovado:** preservar o ícone de cidade murada e o card que informa o local. Construir as cidades e evoluir o clique no ícone/card ou botão para permitir entrar no interior da cidade correspondente.
+- [ ] **Pontes e rios:** escolher pontos específicos para afinar tanto pequenos cursos quanto o rio principal, criando locais adequados a pontes compatíveis com o contexto medieval. Planejar vãos e acessos quando houver escala física definida, preservando a continuidade dos rios e das confluências.
+
+**Escopo deste registro:** guardar as preferências e a sequência de trabalho. A implementação de interiores, as novas opções para capitais e o redesenho dos trechos dos rios ficam para depois; este registro não define capitais, pontes, cidades oficiais ou novas divisões territoriais.
+
 ## 4. Prompt de implementação para o Codex
 
 **Papel:** Você é um desenvolvedor experiente em React, TypeScript, Three.js, React Three Fiber, geometria esférica, cartografia e renderização de mapas interativos.
@@ -120,7 +155,7 @@ Cada registro deve conter `id`, `name`, `parentNationId`, `region`, `description
 - **Hover:** destacar suavemente o ducado sob o cursor.
 - **Clique:** selecionar um ducado, centralizar a câmera e abrir painel com nome, paisagem, vocação e história curta deste documento.
 - **Zoom dentro do ducado:** revelar progressivamente a textura e os detalhes geográficos que **já existem** no mapa (rios ilustrados, florestas, montanhas, lagos e relevo), sem apenas ampliar uma imagem borrada.
-- Preparar estrutura para **24 condados, 96 baronias, cidades, vilas e aldeias**, mas **não gerar nem desenhar essas subdivisões nesta etapa**.
+- Preparar estrutura para **6 marquesados, 24 condados, 96 baronias, cidades, vilas e aldeias**, mas **não gerar nem desenhar essas subdivisões nesta etapa**. Na implementação futura, seguir a separação entre mapa geral e mapa interno definida na seção 3.2.
 - Implementar transições suaves e retorno ao país ou ao planeta.
 - Preferir níveis de detalhe (LOD), tiles ou resolução progressiva compatíveis com a arquitetura existente; não prometer detalhes inexistentes na fonte original.
 
@@ -150,8 +185,9 @@ Ao concluir, informe quais arquivos foram alterados, como os limites foram calcu
 
 ## 5. Questões pendentes para o autor
 
-- Aprovar ou renomear os seis ducados e suas histórias.
+- Aprovar ou revisar as histórias propostas dos seis ducados.
 - Aprovar a geometria proposta pelo Codex após visualizar as fronteiras.
 - Definir posteriormente a capital real, a sede de cada ducado e as casas nobres.
+- Definir nomes, localização e formato da área de 10%, escolha dos marqueses e relação dos seis marquesados militares da Coroa com as demais divisões territoriais.
 - Vetorizar e revisar os rios ilustrados antes de usá-los como fronteiras definitivas.
 - Definir a escala física do planeta antes de calcular km², tempos de viagem e densidades populacionais.

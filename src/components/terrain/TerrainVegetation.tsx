@@ -1,36 +1,50 @@
 import { useEffect, useLayoutEffect, useMemo, useRef } from 'react';
-import { Color, ConeGeometry, CylinderGeometry, IcosahedronGeometry, InstancedMesh, Object3D } from 'three';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { TerrainField, randomAt } from '../../geography/terrain/TerrainField';
-import { countryTerritories } from '../../data/world/politicalMap';
+import { useTexture } from '@react-three/drei';
+import { Color, DoubleSide, InstancedBufferAttribute, InstancedMesh, MeshBasicMaterial, Object3D, PlaneGeometry, SRGBColorSpace } from 'three';
+import type { PaintedTree } from '../../geography/terrain/vegetation';
+import type { TerrainResources } from './terrainResources';
+import { useTerrainResource } from './useTerrainResource';
 
-interface Tree {x:number;z:number;y:number;scale:number;rotation:number;shade:number;}
-export function TerrainVegetation({field,anchor,close}:{field:TerrainField;anchor:[number,number];close:boolean}){
- const trees=useMemo(()=>{
-  const list:Tree[]=[],{width,height}=field.manifest;
-  const add=(x:number,z:number,detail:boolean)=>{
-   const forest=field.sample(x,z,'forest'),water=field.sample(x,z,'water');
-   if(forest<.2||water>.02||randomAt(x,z,31)>forest*.7||field.slope(x,z)>.95||field.elevation(x,z)>750)return;
-   const [cityX,cityZ]=field.toLocal(countryTerritories.find(c=>c.nationId==='aetheria-07')!.citySite);if(Math.hypot(x-cityX,z-cityZ)<45)return;
-   if(detail?Math.hypot(x-anchor[0],z-anchor[1])>650:close&&Math.hypot(x-anchor[0],z-anchor[1])<540)return;
-   list.push({x,z,y:field.elevation(x,z),scale:(detail?.7:1.7)*(0.7+randomAt(x,z,29)*.8),rotation:randomAt(x,z,15)*Math.PI*2,shade:randomAt(x,z,13)});
+/** Illustrated cutouts face the camera while their roots stay in geographic coordinates. */
+export function TerrainVegetation({resources,anchor,close}:{resources:TerrainResources;anchor:[number,number];close:boolean}){
+ const source=useTexture('/assets/terrain/atlas-trees.webp');
+ const texture=useMemo(()=>{const t=source.clone();t.colorSpace=SRGBColorSpace;t.anisotropy=8;t.needsUpdate=true;return t;},[source]);
+ const trees=useTerrainResource<PaintedTree[]>(resources,{kind:'regional',key:'vegetation:regional'},900000);
+ const material=useMemo(()=>{
+  const m=new MeshBasicMaterial({map:texture,alphaTest:.38,side:DoubleSide,fog:true,depthWrite:true,toneMapped:false});
+  m.onBeforeCompile=shader=>{
+   shader.vertexShader='attribute float treeCell; varying float vTreeCell;\n'+shader.vertexShader;
+   shader.vertexShader=shader.vertexShader.replace('#include <uv_vertex>','#include <uv_vertex>\nvTreeCell=treeCell;\n#ifdef USE_MAP\nfloat col=mod(treeCell,4.0);float row=1.0-floor(treeCell/4.0);vMapUv=vec2((col+mix(.012,.988,uv.x))/4.0,(row+mix(.012,.988,uv.y))/2.0);\n#endif');
+   shader.vertexShader=shader.vertexShader.replace('#include <project_vertex>',`
+    vec4 anchor=modelMatrix*instanceMatrix*vec4(0.0,0.0,0.0,1.0);
+    float sx=length(instanceMatrix[0].xyz);float sy=length(instanceMatrix[1].xyz);
+    vec3 right=vec3(viewMatrix[0][0],viewMatrix[1][0],viewMatrix[2][0]);
+    vec3 up=vec3(viewMatrix[0][1],viewMatrix[1][1],viewMatrix[2][1]);
+    vec3 world=anchor.xyz+right*position.x*sx+up*position.y*sy;
+    vec4 mvPosition=viewMatrix*vec4(world,1.0);
+    gl_Position=projectionMatrix*mvPosition;
+   `);
   };
-  for(let z=-height/2;z<height/2;z+=42)for(let x=-width/2;x<width/2;x+=42)add(x+randomAt(x,z,1)*34,z+randomAt(x,z,2)*34,false);
-  if(close){const step=13,startX=Math.floor((anchor[0]-650)/step)*step,startZ=Math.floor((anchor[1]-650)/step)*step;for(let z=startZ;z<anchor[1]+650;z+=step)for(let x=startX;x<anchor[0]+650;x+=step)add(x+randomAt(x,z,1)*10,z+randomAt(x,z,2)*10,true);}
-  return list;
- },[field,anchor[0],anchor[1],close]);
- const crowns=useRef<InstancedMesh>(null),trunks=useRef<InstancedMesh>(null);
- const geometry=useMemo(()=>{
-  const cones=[new ConeGeometry(3.8,8,7),new ConeGeometry(3.1,7,7),new ConeGeometry(2.2,6,7)];cones[0].translate(0,5,0);cones[1].translate(0,8,0);cones[2].translate(0,10.5,0);
-  const rounded=new IcosahedronGeometry(3.8,1);rounded.scale(1,1.2,1);rounded.translate(0,6,0);
-  const plain=cones.map(g=>g.toNonIndexed()),merged=mergeGeometries([...plain,rounded]);cones.forEach(g=>g.dispose());plain.forEach(g=>g.dispose());rounded.dispose();return merged;
- },[]);
- const trunk=useMemo(()=>{const g=new CylinderGeometry(.35,.65,6,5);g.translate(0,3,0);return g;},[]);
+  return m;
+ },[texture]);
+ useEffect(()=>()=>{material.dispose();texture.dispose();},[material,texture]);
+ return <>{trees&&<PaintedTreeLayer trees={trees} material={material}/>}<LocalVegetation resources={resources} anchor={anchor} close={close} material={material}/></>;
+}
+function LocalVegetation({resources,anchor,close,material}:{resources:TerrainResources;anchor:[number,number];close:boolean;material:MeshBasicMaterial}){
+ return close?<LocalTrees resources={resources} anchor={anchor} material={material}/>:null;
+}
+function LocalTrees({resources,anchor,material}:{resources:TerrainResources;anchor:[number,number];material:MeshBasicMaterial}){
+ const trees=useTerrainResource<PaintedTree[]>(resources,{kind:'local',key:`vegetation:local:${anchor[0]}:${anchor[1]}`,anchor},100000);
+ return trees?<PaintedTreeLayer trees={trees} material={material}/>:null;
+}
+function PaintedTreeLayer({trees,material}:{trees:PaintedTree[];material:MeshBasicMaterial}){
+ const geometry=useMemo(()=>{const g=new PlaneGeometry(1,1);g.translate(0,.5,0);g.setAttribute('treeCell',new InstancedBufferAttribute(new Float32Array(trees.map(t=>t.species)),1));return g;},[trees]);
+ const mesh=useRef<InstancedMesh>(null);
  useLayoutEffect(()=>{
-  if(!crowns.current||!trunks.current)return;const object=new Object3D(),a=new Color('#234e2d'),b=new Color('#6b8534');
-  trees.forEach((t,i)=>{object.position.set(t.x,t.y,t.z);object.rotation.set(0,t.rotation,0);object.scale.setScalar(t.scale);object.updateMatrix();crowns.current!.setMatrixAt(i,object.matrix);trunks.current!.setMatrixAt(i,object.matrix);crowns.current!.setColorAt(i,a.clone().lerp(b,t.shade));});
-  crowns.current.instanceMatrix.needsUpdate=true;trunks.current.instanceMatrix.needsUpdate=true;if(crowns.current.instanceColor)crowns.current.instanceColor.needsUpdate=true;crowns.current.computeBoundingSphere();trunks.current.computeBoundingSphere();
- },[trees]);
- useEffect(()=>()=>{geometry.dispose();trunk.dispose();},[geometry,trunk]);
- return <group><instancedMesh castShadow key={`c${trees.length}`} ref={crowns} args={[geometry,undefined,trees.length]} raycast={()=>{}}><meshStandardMaterial roughness={1}/></instancedMesh><instancedMesh castShadow key={`t${trees.length}`} ref={trunks} args={[trunk,undefined,trees.length]} raycast={()=>{}}><meshStandardMaterial color="#635136" roughness={1}/></instancedMesh></group>;
+  if(!mesh.current)return;const object=new Object3D();
+  trees.forEach((t,i)=>{object.position.set(t.x,t.y+.4,t.z);object.scale.set(t.size*1.02,t.size,1);object.updateMatrix();mesh.current!.setMatrixAt(i,object.matrix);mesh.current!.setColorAt(i,new Color().setRGB(t.shade*.78,t.shade,t.shade*.9));});
+  mesh.current.instanceMatrix.needsUpdate=true;if(mesh.current.instanceColor)mesh.current.instanceColor.needsUpdate=true;
+ },[trees,geometry]);
+ useEffect(()=>()=>geometry.dispose(),[geometry]);
+ return <instancedMesh ref={mesh} key={trees.length} args={[geometry,material,trees.length]} frustumCulled={false} raycast={()=>{}} dispose={null}/>;
 }

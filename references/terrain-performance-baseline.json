@@ -1,0 +1,56 @@
+{
+  "runtime": "v24.20.0",
+  "kind": "Node CPU generation benchmark; not browser FPS",
+  "runs": [
+    {
+      "anchor": [
+        0,
+        0
+      ],
+      "close": false,
+      "ms": 509.5,
+      "trees": 26474,
+      "hash": "0337be7b43d76c0c510e410fe359db60d5b871a1196fe5dd0b6deb84d6d0590c"
+    },
+    {
+      "anchor": [
+        256,
+        0
+      ],
+      "close": false,
+      "ms": 519.54,
+      "trees": 26474,
+      "hash": "0337be7b43d76c0c510e410fe359db60d5b871a1196fe5dd0b6deb84d6d0590c"
+    },
+    {
+      "anchor": [
+        512,
+        0
+      ],
+      "close": false,
+      "ms": 512.19,
+      "trees": 26474,
+      "hash": "0337be7b43d76c0c510e410fe359db60d5b871a1196fe5dd0b6deb84d6d0590c"
+    },
+    {
+      "anchor": [
+        512,
+        0
+      ],
+      "close": true,
+      "ms": 641.56,
+      "trees": 27032,
+      "hash": "181837fd148708e9deee378991a14c476a604aea5cb0ab29134f49438deb9110"
+    },
+    {
+      "anchor": [
+        768,
+        0
+      ],
+      "close": true,
+      "ms": 459.08,
+      "trees": 27101,
+      "hash": "4a35afcba24131e1b28699dc993da3a6dc59efc6858de71503b015859e568ba1"
+    }
+  ]
+}

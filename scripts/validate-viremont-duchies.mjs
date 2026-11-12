@@ -32,5 +32,10 @@ for(let y=.395;y<.43;y+=.002)for(let x=.321;x<.356;x+=.002)if(owns([x,y],thargru
 assert(openPatches>10,'Thargrund must include open foothill land, not only mountains');
 assert(owns([.298,.354],data.duchies.find(d=>d.id==='viremont-selveria').geometry),'Selvéria lost its requested western river approach');
 for(let y=.29;y<.49;y+=.004)for(let x=.25;x<.39;x+=.004){const point=[x,y],matches=data.duchies.filter(d=>owns(point,d.geometry));if(!owns(point,national.geometry))assert.equal(matches.length,0,'Neighbor selected as a duchy');}
-for(const [file,hash] of Object.entries(baseline))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),hash,`${file}: protected geography, source art or editorial changed`);
+for(const [file,hash] of Object.entries(baseline)){
+  const source=fs.readFileSync(file);
+  // Editorial approval freezes content, independently of checkout line endings.
+  const content=file==='viremont_ducados_codex.md'?source.toString('utf8').replace(/\r\n/g,'\n'):source;
+  assert.equal(crypto.createHash('sha256').update(content).digest('hex'),hash,`${file}: protected geography, source art or editorial changed`);
+}
 console.log('Verified six connected asymmetric duchies, containment, coverage, city ownership, neighbor exclusion and unchanged global geography/artwork/editorial.');
